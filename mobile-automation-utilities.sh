@@ -2,8 +2,16 @@ function get-ipa-app-version() {
     unzip -p "$1" 'Payload/*.app/Info.plist' | strings | awk -F'[<>]' '/CFBundleShortVersionString/{getline; print $3}'
 }
 
+function get-ipa-app-build-number() {
+    unzip -p "$1" 'Payload/*.app/Info.plist' | strings | awk -F'[<>]' '/CFBundleVersion/{getline; print $3}' | sed 's/[^0-9.]//g'
+}
+
 function get-simulator-app-version() {
     /usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' '$1/Info.plist'
+}
+
+function get-simulator-app-build-number() {
+    /usr/libexec/PlistBuddy -c 'Print CFBundleVersion' '$1/Info.plist' | sed 's/[^0-9.]//g'
 }
 
 function list-connected-iphones-info() {
