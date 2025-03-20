@@ -1,11 +1,12 @@
-# Download Mobile Automation Helper Scripts
+# 📱 iOS App Utility Scripts  
 
-This GitHub Action downloads mobile automation helper scripts for testing.
+This script provides various **iOS app-related utilities**, including extracting version and build numbers from `.ipa` and **simulator apps**, as well as listing connected iPhones with device details.  
 
-## 📥 Usage
-```yaml
-steps:
-  - name: Download utility scripts
-    uses: iambalabharathi/download-mobile-automation-helper-scripts@v1
-    with:
-      path: "/tmp/mobile-automation-utilities.sh"
+---
+
+## 🚀 Features  
+- ✅ Extract **app version** and **build number** from an `.ipa` file  
+- ✅ Extract **app version** and **build number** from a **simulator app**  
+- ✅ List all **connected iPhones** with UDID, device name, and iOS version  
+
+---
